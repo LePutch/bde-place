@@ -1,0 +1,14 @@
+.selected {
+    position: relative;
+}
+
+.selected::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(201, 255, 252);
+    opacity: 0.5;
+}
