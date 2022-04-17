@@ -1,0 +1,22 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#root {
+    height: 100vh;
+    display: flex;
+}
+
+.grid {
+    overflow: auto;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.scale {
+    transform: scale(4);
+}
