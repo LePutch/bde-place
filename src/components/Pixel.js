@@ -1,0 +1,1 @@
+export const Pixel = ({color}) => <div style={{ width: 1, height: 1, background: color }} />
