@@ -2,6 +2,8 @@ import React, { memo } from "react";
 import "./pixel.css"
 import { useSelectedPixelState } from "./useSelectedPixelState";
 
+const PIXEL_SIZE = 3.3333333333333333333333333
+
 export const Pixel = ({ id }) => {
 
     const [isSelected, color, dispatch] = useSelectedPixelState(id)
@@ -9,7 +11,7 @@ export const Pixel = ({ id }) => {
 }
 
 const ThemedPixel = memo(({ id, isSelected, color, dispatch }) => {
-    const baseStyle = { width: 1, height: 1, background: "grey" }
+    const baseStyle = { width: PIXEL_SIZE, height: PIXEL_SIZE, background: "grey" }
     const style = isSelected ? { ...baseStyle, background: color } : baseStyle
 
     return <div

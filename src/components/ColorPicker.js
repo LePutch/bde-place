@@ -1,5 +1,6 @@
 import React from "react"
 import { PixelContext } from "../features/selectPixel"
+import { Button } from "./Button"
 
 export const ColorPicker = () => {
     const pixelContext = React.useContext(PixelContext)
@@ -22,18 +23,23 @@ export const ColorPicker = () => {
         "#820080",
     ]
 
-    return <div style={{ background: "white", display: "flex", justifyContent: "space-around", width: "100%", boxShadow: "0px 0px 5px 0px #686868", flexWrap: "wrap" }}>
-        {colors.map((color) => (<div
-            key={color}
-            style={{ height: 20, borderRadius: 3, background: color, margin: 8, minWidth: 40, boxShadow: "0px 0px 5px 0px #CCC" }}
-            onClick={
-                (e) => {
-                    e.preventDefault()
-                    const action = { type: "pickColor", color }
-                    pixelContext.dispatch(action)
+    return <div style={{ position: "relative", background: "white", display: "flex", flexDirection: "column", alignItems: "center", width: "100%", boxShadow: "0px 0px 5px 0px #686868" }}>
+        <div style={{ position: "absolute", top: -100 }}>
+            <Button>Placer</Button>
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-around", width: "100%", flexWrap: "wrap" }}>
+            {colors.map((color) => (<div
+                key={color}
+                style={{ height: 20, borderRadius: 3, background: color, margin: 8, minWidth: 40, boxShadow: "0px 0px 5px 0px #CCC" }}
+                onClick={
+                    (e) => {
+                        e.preventDefault()
+                        const action = { type: "pickColor", color }
+                        pixelContext.dispatch(action)
+                    }
                 }
-            }
-        />))}
+            />))}
+        </div>
     </div>
 
 

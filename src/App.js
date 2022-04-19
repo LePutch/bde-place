@@ -9,7 +9,7 @@ import "./grid.css";
 const App = () => (
   <PixelProvider>
     <div className='layout'>
-      <TransformWrapper minScale={2} maxScale={50}>
+      <TransformWrapper initialScale={1} centerOnInit={true} minScale={0.1} maxScale={20} >
         <TransformComponent wrapperClass='grid-wrapper'>
           <div className='grid'>
             {RANGE.map((i) => <div key={`line-${i}`} style={{ display: "flex" }}>
