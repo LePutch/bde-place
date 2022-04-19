@@ -6,20 +6,18 @@ import { PixelProvider } from './features/selectPixel';
 import "./grid.css";
 
 const App = () => (
-  <>
+  <PixelProvider>
     <div className='layout'>
       <div className='grid'>
         <div className='scale'>
-          <PixelProvider>
-            {RANGE.map((i) => <div key={`line-${i}`} style={{ display: "flex" }}>
-              {RANGE.map((j) => <Pixel key={i + ':' + j} id={i + ':' + j} color="red" />)}
-            </div>)}
-          </PixelProvider>
+          {RANGE.map((i) => <div key={`line-${i}`} style={{ display: "flex" }}>
+            {RANGE.map((j) => <Pixel key={i + ':' + j} id={i + ':' + j} color="red" />)}
+          </div>)}
         </div>
       </div>
       <ColorPicker />
     </div>
-  </>
+  </PixelProvider>
 )
 
 export default App;

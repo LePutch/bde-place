@@ -5,6 +5,6 @@ export const useSelectedPixelState = (id) => {
     const { state, dispatch } = React.useContext(PixelContext)
 
     const isSelected = state.selectedPixelId === id;
-
-    return [isSelected, dispatch]
+    const color = state.selectedColor
+    return [isSelected, color, dispatch]
 } 
