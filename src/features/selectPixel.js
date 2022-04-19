@@ -13,7 +13,7 @@ export const reducer = (state, action) => {
             return { ...state, pixels: action.payload }
         case "write":
             writePixel(state.selectedPixelId, state.selectedColor)
-            return { ...state, selectedPixelId: null }
+            return { ...state, selectedPixelId: null, pixels: { ...state.pixels, [state.selectedPixelId]: { color: state.selectedColor } } }
         default:
             return state
     }
