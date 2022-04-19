@@ -1,13 +1,12 @@
 import React from "react"
 
 // {selectedPixelId: null, selectedColor: "white"}
-export const initialSelectedPixelId = null
+export const initialSelectedPixelId = {selectedPixelId: null}
 
 export const reducer = (state, action) => {
     switch (action.type) {
         case "select":
-            // return {...state, selectedPixelId: action.selectedPixelId}
-            return action.selectedPixelId
+            return {...state, selectedPixelId: action.selectedPixelId}
         // case "pickColor":
         //  return {...state, selectedColor: action.color}
         default:
