@@ -25,7 +25,10 @@ export const ColorPicker = () => {
 
     return <div style={{ position: "relative", background: "white", display: "flex", flexDirection: "column", alignItems: "center", width: "100%", boxShadow: "0px 0px 5px 0px #686868" }}>
         <div style={{ position: "absolute", top: -100 }}>
-            <Button>Placer</Button>
+            <Button onClick={(e) => {
+                e.preventDefault()
+                pixelContext.dispatch({ type: "write" })
+            }}>Placer</Button>
         </div>
         <div style={{ display: "flex", justifyContent: "space-around", width: "100%", flexWrap: "wrap" }}>
             {colors.map((color) => (<div

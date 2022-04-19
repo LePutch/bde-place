@@ -1,11 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getDatabase, ref, onValue, set } from "firebase/database";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyAZQd2uMSnyDBnI__k7_TAGLks2RwW801A",
   authDomain: "bdeplace-c4edd.firebaseapp.com",
@@ -17,6 +12,20 @@ const firebaseConfig = {
   measurementId: "G-Z1TXJ0C6Q5"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+const db = getDatabase();
+const pixelsRef = ref(db, 'pixels');
+
+export const listenForNewSnapshot = (updateSnapshot) => {
+  onValue(pixelsRef, (snapshot) => {
+    const data = snapshot.val();
+    updateSnapshot(data);
+  });
+}
+
+export const writePixel = (pixelId, color) => {
+  set(ref(db, 'pixels/' + pixelId), {
+    color
+  });
+}
