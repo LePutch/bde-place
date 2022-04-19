@@ -12,7 +12,7 @@ const firebaseConfig = {
   measurementId: "G-Z1TXJ0C6Q5"
 };
 
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const db = getDatabase();
 const pixelsRef = ref(db, 'pixels');
