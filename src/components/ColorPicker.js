@@ -25,7 +25,7 @@ export const ColorPicker = () => {
     return <div style={{ background: "white", display: "flex", justifyContent: "space-around", width: "100%", boxShadow: "0px 0px 5px 0px #686868", flexWrap: "wrap" }}>
         {colors.map((color) => (<div
             key={color}
-            style={{ height: 20, borderRadius: 3, background: color, margin: 8, minWidth: 40, boxShadow: "0px 0px 5px 0px #686868" }}
+            style={{ height: 20, borderRadius: 3, background: color, margin: 8, minWidth: 40, boxShadow: "0px 0px 5px 0px #CCC" }}
             onClick={
                 (e) => {
                     e.preventDefault()
