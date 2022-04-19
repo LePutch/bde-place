@@ -13,6 +13,7 @@
     background: transparent;
     animation: animatedOpacity 2s linear infinite;
     border-radius: 1.5px;
+    pointer-events: none;
 }
 
 @keyframes animatedOpacity {
