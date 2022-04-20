@@ -30,7 +30,7 @@ export const ColorPicker = () => {
                 pixelContext.dispatch({ type: "write" })
             }}>Placer</Button>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-around", width: "100%", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", justifyContent: "space-around", maxWidth: "100%", flexWrap: "wrap" }}>
             {colors.map((color) => (<div
                 key={color}
                 style={{ height: 20, borderRadius: 3, background: color, margin: 8, minWidth: 40, boxShadow: "0px 0px 5px 0px #CCC" }}
